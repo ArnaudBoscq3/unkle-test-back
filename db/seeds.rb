@@ -1,6 +1,6 @@
 # CREATE 2 ADMINS
-Admin.create(email: 'matthieu@unkle.', password:'unkle123')
-Admin.create(email: 'johann@unkle.', password:'unkle123')
+Admin.create(email: 'matthieu@unkle.fr', password:'unkle123')
+Admin.create(email: 'johann@unkle.fr', password:'unkle123')
 
 # CREATE 3 CLIENTS
 Client.create(email: 'arnaud@gmail.com', password:"client123")
