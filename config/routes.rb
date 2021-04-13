@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'Client', at: 'auth'
-  mount_devise_token_auth_for 'Admin', at: 'admin_auth'
+  mount_devise_token_auth_for 'Admin', at: 'auth_admin'
 
-  as :admin do
-    # Define routes for Admin within this block.
+  namespace :admin do
+    resources :clients, only: %i[index show create destroy]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
