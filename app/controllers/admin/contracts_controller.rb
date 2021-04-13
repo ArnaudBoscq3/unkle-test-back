@@ -24,7 +24,7 @@ class Admin::ContractsController < Admin::ApplicationController
     end_date = params[:contracts][:end_date]
     return unless end_date.present? && @contract.end_date.nil?
 
-    if end_date.to_date >= Date.today
+    if end_date.to_date > Date.today
       @contract.update(end_date: end_date.to_date)
       render json: Contract.to_json(@contract)
     else
