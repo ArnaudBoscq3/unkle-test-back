@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :admins, only: %i[index show create destroy]
     resources :clients, only: %i[index show create destroy]
+    resources :contracts, only: %i[index create update]
   end
 end
