@@ -7,4 +7,9 @@ class Client < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :clients_contracts
+  has_many :contracts, through: :clients_contracts, dependent: :destroy
+  
+  scope :with_contracts, -> { includes(:contracts) }
 end
