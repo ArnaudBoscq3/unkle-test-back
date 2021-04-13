@@ -22,8 +22,8 @@ So first, we need to ```Sign up``` and/or ```Log in``` to be authenticated<br/>
 Send a JSON request to ```POST localhost:3000/auth/``` with the parameters below.<br/>
 ```
 {
-    "email": "arnaud@gmail.com",
-    "password": "mdp123"
+    "email": "johndoe@gmail.com",
+    "password": "client123"
 }
 ```
 
@@ -32,7 +32,7 @@ Send a JSON request to ```POST localhost:3000/auth/sign_in``` with the parameter
 ```
 {
     "email": "arnaud@gmail.com",
-    "password": "mdp123"
+    "password": "client123"
 }
 ```
 
@@ -44,7 +44,7 @@ We already added two ```Admins``` in our project who will be allowed to manage t
 Send a JSON request to ```POST localhost:3000/auth_admin/sign_in``` with the parameters below.<br/>
 ```
 {
-    "email": "matthieu@unkle.com",
+    "email": "matthieu@unkle.fr",
     "password": "unkle123"
 }
 ```
@@ -74,7 +74,7 @@ We need to be authenticated as an ```Admin```. <br/>
 Send a JSON request to ```POST localhost:3000/admin/admins``` with the parameters below.<br/>
 ```
 {
-    "admins": {"email": "johndoe@unkle.com"}
+    "admins": {"email": "johndoe@unkle.fr"}
 }
 ```
 
