@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :clients, only: %i[index show create destroy]
     resources :contracts, only: %i[index create update]
   end
+
+  resources :clients_contracts, only: %i[index update]
 end

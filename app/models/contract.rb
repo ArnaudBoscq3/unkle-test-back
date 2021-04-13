@@ -17,6 +17,7 @@ class Contract < ApplicationRecord
 
   def self.to_json(contract)
     {
+      id: contract.id,
       number: contract.number,
       status: contract.status,
       start_date: contract.start_date,
