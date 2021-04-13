@@ -6,7 +6,6 @@ class Admin::ClientsController < Admin::ApplicationController
 
   def index
     @clients = Client.with_contracts
-    binding.pry
     render json: @clients.to_json(include: :contracts)
     # Add a paginate
   end
