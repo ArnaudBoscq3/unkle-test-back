@@ -124,11 +124,12 @@ We need to be authenticated as a ```Client```. <br/>
 ```GET localhost:3000/clients_contracts```
 
 2. Cancel Contract<br/>
-Send a JSON request to ```POST localhost:3000/clients_contracts/1``` with the parameters below.<br/>
+Send a JSON request to ```POST localhost:3000/clients_contracts/4``` with the parameters below.<br/>
 ```
 {
     "contracts": {"end_date":"10/12/2021" }
 }
+```
 
 <b>F. CRON JOBS (WHENEVER GEM)</b><br/>
 We use ```gem 'whenever'``` to change dynamically the ```status``` of the```Contracts```. (```config/schedule.rb```)<br/>
