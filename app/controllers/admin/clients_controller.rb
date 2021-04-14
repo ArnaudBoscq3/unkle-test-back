@@ -26,7 +26,10 @@ class Admin::ClientsController < Admin::ApplicationController
     client.password = ([*('A'..'Z'), *('0'..'9')] - %w[0 1 I O]).sample(8).join
     client.save!
     # Send email with login info or sms with Twilio
-    render json: client
+    render json: {
+      message: 'Client créé avec succès',
+      client: client
+    }
   end
 
   def destroy

@@ -17,7 +17,10 @@ class Admin::ContractsController < Admin::ApplicationController
     return unless params[:contracts][:option_ids].present? && params[:contracts][:client_ids].present? && params[:contracts][:start_date].present?
 
     contract = Contract.create!(contract_params)
-    render json: Contract.to_json(contract)
+    render json: {
+      message: 'Contrat créé avec succès',
+      contract: Contract.to_json(contract)
+    }
   end
 
   def update
@@ -26,7 +29,10 @@ class Admin::ContractsController < Admin::ApplicationController
 
     if end_date.to_date > Date.today
       @contract.update(end_date: end_date.to_date)
-      render json: Contract.to_json(@contract)
+      render json: {
+        message: 'Le contrat sera résilié le ' + end_date,
+        contract: Contract.to_json(@contract)
+      }
     else
       render json: { message: "Votre date de résiliation n'est pas valable"}
     end 
