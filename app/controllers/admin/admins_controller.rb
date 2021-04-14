@@ -15,7 +15,10 @@ class Admin::AdminsController < Admin::ApplicationController
     admin.password = ([*('A'..'Z'), *('0'..'9')] - %w[0 1 I O]).sample(8).join
     admin.save!
     # Send email with login info
-    render json: admin
+    render json: {
+      message: 'Admin créé avec succès',
+      admin: admin
+    }
   end
 
   def destroy

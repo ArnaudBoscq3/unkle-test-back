@@ -20,7 +20,10 @@ class ClientsContractsController < ApplicationController
 
     if end_date.to_date >= Date.today && @contract.clients.where(email: current_client.email).present?
       @contract.update(end_date: end_date.to_date)
-      render json: Contract.to_json(@contract)
+      render json: {
+        message: 'Votre contrat sera résilié le ' + end_date,
+        contract: Contract.to_json(@contract)
+      }
     else
       render json: { message: "Votre date de résiliation n'est pas valable ou vous ne pouvez pas modifier ce contrat"}
     end 
